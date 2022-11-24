@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+
+<head>
+<meta name="description" content="4.2.2">
+  <meta charset="utf-8">
+  <title>feedback</title>
+<!--    adding the stylesheet-->
+    <link rel="stylesheet" href="FinalFonts.css">
+
+
+</head>
+<body>
+<!--the bar-->
+<section class="navbar">
+    <nav>
+        <h1 class="sliding-logo" ><a href="index.html"><img src="images/logo5.png"  alt=""></a></h1>
+        <ul>
+            <li><a href="index.html#design-work">Design Work</a></li>
+            <li><a href="me.html">About Me</a></li>
+            <li><a href="feedback.html">Feedback Here</a></li>
+            <li><a href="ContactMe.html">Contact Me</a></li>
+            <li><a href="assignment.html">Assignment</a></li>
+        </ul>
+    </nav>
+</section>
+<!--the title-->
+<h2>Feedback Form</h2>
+<!--the email address-->
+<form enctype="text/plain"
+     action="mailto:u7532120@anu.edu.au" method="post">
+
+<!--creating the input areas for question-->
+Your Name
+    <br>
+    <label>
+        <input type="text" name="name"
+               size="46" maxlength="80"
+               placeholder="Type name here..." style="font-family:Century Gothic,serif" >
+    </label>
+    <br>
+  <br>
+Your email address
+<br>
+    <label>
+        <input type="text" name="email"
+               size="46" maxlength="80"
+               placeholder="Type email here..." style="font-family:Century Gothic,serif" >
+    </label>
+    <br>
+What is your gender?
+<br>
+    <label>
+        <input type="radio" name = "gender" value="male">
+    </label> Male
+    <label>
+        <input type="radio" name = "gender" value="female">
+    </label> Female
+    <label>
+        <input type="radio" name = "gender" value="I prefer not to say">
+    </label> I prefer not to say
+<br>
+<!--    the text area for the opinion-->
+<br>
+Please fill in your feedback below
+<br>
+    <label>
+<textarea maxlength="250" name="feedback" placeholder="Type your opinion here..."
+          style="font-family:Century Gothic,serif" wrap="soft"></textarea>
+    </label>
+    <br>
+
+<!--  the buttons-->
+ <hr>
+  <input type="submit" value="Submit">
+
+  <input type="reset" value="Clear">
+    <hr>
+	
+	
+	
+</form>
+
+</body>
+
+</html>

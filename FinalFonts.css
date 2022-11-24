@@ -1,0 +1,818 @@
+/*ensure the default margin and paddings are 0
+so after this the styling margin and padding would be
+sure within the box area*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/*setting the background picture
+-make sure it is fixed and no repeat so when scroll we can see the effect of moving on the paper page
+-again ensure no margin and padding and set font*/
+body {
+    background-image: url(paper-background.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+    font-family: Century Gothic, Helvetica, Geneva, sans serif;
+    margin: 0;
+    padding: 0;
+}
+/*setting navigation bar style
+-ensure its transparent effect
+-use flex display to make element display in horizontally*/
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 5rem;
+    background: rgba(247, 247, 247, 0.6);
+}
+/*title for section and gallery img*/
+h2 {
+    color: black;
+    font-size: 2rem;
+    padding-left: 10%;
+    font-weight: bold;
+}
+/*title for intro of projects*/
+h3 {
+    color: white;
+    font-weight: bold;
+    font-size: 2rem;
+    padding-left: 5vh;
+    padding-right: 5vh;;
+
+}
+/*for navigation bar order list styling*/
+ul {
+    display: flex;
+    list-style: none;
+    align-items: center;
+}
+/*link title text styling*/
+a {
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: black;
+    margin-left: 5rem;
+
+}
+td {
+    text-align: center;
+}
+
+/*body text styling*/
+p {
+    margin-bottom: 0;
+    color: white;
+    font-weight:lighter;
+    font-family: Century Gothic, Helvetica, Geneva, sans serif;
+    font-size:1rem;
+    padding: 5vh 5vh 5vh 5vh;
+    text-align: justify-all;
+
+}
+.p1{
+    background-image: url(paper-background.jpg);
+    background-size: cover;
+    border-radius: 1rem;
+    color: black;
+    font-size: 1rem;
+    padding: 5vh 5vh 5vh 5vh;
+    font-weight: normal;
+    text-align: justify;
+}
+
+
+/*the first page title styling
+-set its position in the page and font size
+-use transform to scale it instead of adjusting size to ensure the title layout will not change*/
+.logo {
+    position: absolute;
+    left: 79%;
+    top: 50%;
+    font-size: 1.3rem;
+    transform: translate(-50%, -50%) scale(6);
+}
+.logo img{
+    width:5%;
+}
+/*styling the subtitle slogan pt.1*/
+.subtitle {
+    position: absolute;
+    left: 59%;
+    top: 51%;
+    font-size: 0.1rem;
+    transform: translate(-50%, -50%) scale(6);
+    text-decoration: underline;
+    font-weight: lighter;
+
+}
+/*styling the subtitle slogan pt.2*/
+.subtitle1 {
+    position: absolute;
+    left: 64%;
+    top: 36%;
+    font-size: 1rem;
+    transform: translate(-50%, -50%) scale(10);
+    font-weight: bolder;
+
+}
+
+
+/*styling the subtitle slogan pt.3
+-opacity 0.1 enable the slogan can only be seen when visitor scroll to next section*/
+.subtitle2 {
+    position: absolute;
+    left: 88%;
+    top: 55%;
+    font-size: 2rem;
+    transform: translate(-50%, -50%) scale(6);
+    text-decoration: underline;
+    font-weight: normal;
+    color: white;
+    opacity: 0.1;
+}
+
+
+/*styling the subtitle slogan pt.3
+-opacity 0.1 enable the slogan can only be seen when visitor scroll to next section*/
+.subtitle3 {
+    position: absolute;
+    left: 73%;
+    top: 85%;
+    font-size: 2rem;
+    transform: translate(-50%, -50%) scale(6);
+    font-weight: bolder;
+    color: white;
+    text-align: right;
+    opacity: 0.1;
+}
+
+
+
+#container {
+    width: 100%;
+    /*height: 10vh;*/
+    display: flex;
+    flex-direction: column;
+    margin-left: 10%;
+}
+
+h4{
+    color: white;
+    padding-bottom: 1%;
+}
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+.switch input {
+    display: none;
+}
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #ccc;
+    border-radius: 34px;
+    transition: .4s;
+}
+.slider:before {
+    content: "";
+    position: absolute;
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background: #fff;
+    border-radius: 50%;
+    transition: .4s;
+}
+input:checked + .slider {
+    background: #b892ff;
+}
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+.gallery-mode {
+    overflow-y:hidden ;
+    background: black no-repeat;
+    animation: change 5s infinite ease-in-out;
+
+}
+.gallery-mode h3 {
+    color: transparent;
+}
+
+.gallery-mode p {
+    color: transparent;
+}
+
+.gallery-mode .project-description {
+    width: 20%;
+    display: flex;
+    background-color: transparent;
+}
+
+.gallery-mode .img-slider .slide .info p{
+    color: transparent;
+    background: transparent;
+
+}
+
+.gallery-mode .img-slider .slide .info h2{
+    color: white;
+    font-size: 4rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding-top: 0;
+    padding-bottom: 0;
+    text-align: center;
+
+}
+
+.gallery-mode .img-slider {
+    margin-left: 0
+}
+
+@keyframes change {
+    0% {
+        background: rgba(133, 189, 124, 0.8);
+    }
+    25% {
+        background: #40603c;
+    }
+    50% {
+        background: #111111;
+    }
+    75% {
+        background: #2d4626;
+    }
+    100% {
+        background: rgba(133, 189, 124, 0.8);
+    }
+}
+
+
+
+/*set the section height is 1 full screen*/
+.Home {
+    height: 100vh;
+}
+
+
+/*set the section height is 1 full screen and colored to divide the first page*/
+.first-page {
+    height: 100vh;
+    background: black;
+}
+
+
+/*set the icons section height refer to their intended position in first-page*/
+.first-gallery {
+    height: 80vh;
+}
+
+
+
+/*styling title logo background image*/
+.circle img {
+    position: absolute;
+    top: 5%;
+    left: 3%;
+    opacity: 0.8;
+    width: 54%;
+}
+
+/*first Page Grid
+-left space around the grid
+-using the grid to form gallery
+-setting the columns&rows
+-creating the gaps among the icons*/
+#index-gallery {
+    padding-top: 20vh;
+    padding-left: 5vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-auto-rows: auto;
+    grid-gap: 20px;
+    grid-template-areas:
+    "img5 img2 img3 img4 img9"
+    "img6 img7 img8 img1 img9";
+
+}
+
+/*overall styling of the gallery image*/
+#index-gallery .img {
+    width: 18vh;
+    height: 18vh;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    cursor: pointer;
+
+}
+
+/*images styling
+-label a name and area for each image*/
+#index-gallery .p {
+    grid-area: gallery-p;
+}
+
+#index-gallery .h2 {
+    grid-area: gallery-h2;
+}
+
+/*link each icon in*/
+#index-gallery .img1 {
+    grid-area: img1;
+    background-image: url("images/thumbs/typeface.png");
+}
+
+#index-gallery .img2 {
+    grid-area: img2;
+    background-image: url("images/thumbs/infinity poster.png");
+}
+
+#index-gallery .img3 {
+    grid-area: img3;
+    background-image: url("images/thumbs/markmaking.png");
+}
+
+#index-gallery .img4 {
+    grid-area: img4;
+    background-image: url("images/thumbs/fodr.png");
+}
+
+#index-gallery .img5 {
+    grid-area: img5;
+    background-image: url("images/thumbs/beta.png");
+}
+
+#index-gallery .img6 {
+    grid-area: img6;
+    background-image: url("images/thumbs/panoramic-view (2).png");
+}
+
+#index-gallery .img7 {
+    grid-area: img7;
+    background-image: url("images/thumbs/bats.png");
+}
+
+#index-gallery .img8 {
+    grid-area: img8;
+    background-image: url("images/thumbs/panoramic-view.png");
+}
+
+#index-gallery .img9 {
+    grid-area: img9;
+    background-image: url("images/thumbs/design.png");
+}
+
+
+/*to create hover(before) effect and styling the text position on each icon*/
+.img div {
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    opacity: 0;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    padding-right: 1vh;
+}
+
+
+/*styling the link text*/
+.first-gallery a {
+    padding: 0;
+    margin: 0;
+    font-size: 16px;
+    color: black;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+
+/*to create hover(after) effect*/
+.first-gallery div:hover {
+    width: 200%;
+    height: 100%;
+    opacity: 0.8;
+    transition: all ease-in-out 80ms;
+}
+
+
+/*Image gallery page
+-the left introduction area styling*/
+.description-background{
+    display: flex;
+    height: 100vh;
+}
+
+/*styling the project intro text layout*/
+.project-description{
+    width:30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: black;
+}
+
+
+/*Image map page intro area styling*/
+.project-description-IM{
+    width:50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: gray;
+    opacity: 0.6;
+}
+
+
+/*styling the image gallery(slider)*/
+.img-slider{
+    position: relative;
+    width: 60%;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+
+/*make slides stack together by the same z-index
+-creates a clipping region for slide that only part(circle shape) of slide be shown for later change slides effect*/
+.img-slider .slide{
+    z-index: 1;
+    position: absolute;
+    width: 100%;
+    clip-path: circle(0% at 0 50%);
+}
+
+
+/*set the speed of change effect and make clip path that was set for slide as the transition effect*/
+.img-slider .slide.active{
+    clip-path: circle(150% at 0 50%);
+    transition: 3s;
+    transition-property: clip-path;
+}
+
+
+/*make slides stack together by the same 1 z-index
+and styling the images*/
+.img-slider .slide img{
+    z-index: 1;
+    width: 100%;
+    border-radius: 5px;
+}
+
+
+/*styling the comment(intro) area for images*/
+.img-slider .slide .info{
+    position: absolute;
+    top: 100%;
+    padding-left: 0;
+}
+
+
+/*styling the Title for images*/
+.img-slider .slide .info h2{
+    color: black;
+    font-size: 20px;
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 2px;
+    padding-left: 0;
+}
+
+
+/*comment text for image gallery*/
+.img-slider .slide .info p{
+    color: black;
+    background: rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+    width: 100%;
+    padding: 5px;
+    border-radius: 4px;
+}
+
+
+/*the button navigation position
+make sure it stack over the image(on the image can be seen)*/
+.img-slider .navigation{
+    z-index: 2;
+    position: absolute;
+    display: flex;
+    bottom: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
+/*the button(circles) styling*/
+.img-slider .navigation .btn{
+    background: black;
+    opacity: 0.5;
+    width: 12px;
+    height: 12px;
+    margin: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+
+/*button color change when activated*/
+.img-slider .navigation .btn.active{
+    background: #2696E9;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+}
+
+
+/*image map position*/
+#imageMap{
+    padding-left: 5%;
+    justify-content: center;
+    align-items: center;
+}
+
+.introduction{
+    height: 100vh;
+    align-content: center;
+    background-color: black;
+
+}
+
+.social{
+    padding-top: 3%;
+    margin-left: 8%;
+}
+.me{
+    padding-top: 8%;
+    height:100vh ;
+}
+.passion{
+    padding-top: 15%;
+    height:100vh ;
+}
+
+.reflection{
+    padding-top: 5%;
+    margin-bottom: 10%;
+    height:100vh ;
+}
+
+
+.fb-share-button{
+    margin-left: 10%;
+    padding-bottom: 3%;
+}
+
+.cv-page{
+    height: 100vh;
+    font-family: 'Helvetica Neue', sans-serif;
+}
+
+.cv-download{
+    margin-left: 0;
+    margin-top: 2%;
+}
+
+.download-btn{
+    background-color: black;
+    color: white;
+    padding: 1rem 2rem;
+    font-size: 0.5rem;
+    text-decoration: none;
+    border-radius:5px;
+}
+
+.download-btn:hover {
+    background-color: rgba(168, 168, 168, 0.3);
+
+}
+object{
+    padding-left: 10%;
+    height: 90vh;
+    width: 90%;
+}
+.portfolioTitle{
+    padding-top: 1%;
+    padding-left: 10%;
+    padding-bottom: 1%;
+}
+
+/*This is the format for feedback form sheet*/
+form {
+    color: white;
+    background: rgba(0,0,0,0.6);
+    border-radius: 1rem;
+    font-weight: normal;
+    margin-top: 1%;
+    margin-left: 10%;
+    margin-right: 10%;
+    padding: 5vh 5vh 5vh 5vh;
+    font-size: 16px;
+    border: 2px solid #777777;
+}
+
+
+/*formatting the input area*/
+input[type="text"] {
+    border: 2px solid #777777;
+    border-radius: 5px;
+    margin-top: 1%;
+    margin-bottom: 3%;
+    padding-left: 2%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    width: 98%;
+    background: whitesmoke;
+
+}
+
+/*setting the hover style of input area*/
+input[type= "text"]:hover {
+    background: rgb(255, 255, 255);
+}
+
+/*setting the"gender" question*/
+input[type= "radio"] {
+    border: transparent;
+}
+
+/*formatting the gender choices*/
+#select {
+    height: 10px;
+    font-weight: normal;
+    font-family: Century Gothic, Helvetica, Geneva, sans serif;
+    border: transparent;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+/*designing the buttons*/
+input[type= "submit"] {
+    border: transparent;
+    border-radius: 2px;
+    color: #eeeeee;
+    /*background: #5F7161;*/
+    background: rgb(17, 17, 17);
+    padding: 1%;
+    width: 10%;
+    margin: 1% 1% 1% 75%;
+    font-weight: bold;
+    font-family: Century Gothic, Helvetica, Geneva, sans serif;
+}
+
+/*changing the hover style*/
+input[type= "submit"]:hover {
+    background: #D0C9C0;
+    cursor: grab;
+}
+
+/*designing the buttons*/
+input[type= "reset"] {
+    border: transparent;
+    border-radius: 2px;
+    color: white;
+    background: rgb(17, 17, 17);
+    /*background: #6D8B74;*/
+    padding: 1%;
+    width: 10%;
+    margin: 1%;
+    font-weight: bold;
+    font-family: Century Gothic, Helvetica, Geneva, sans serif;
+}
+
+/*changing the hover style*/
+input[type= "reset"]:hover {
+    background: #D0C9C0;
+    cursor: grab;
+}
+
+hr {
+    margin: 0;
+}
+
+/*the style of the text area*/
+textarea{
+    border: 2px solid #777777;
+    border-radius: 5px;
+    margin-top: 1%;
+    margin-bottom: 3%;
+    padding-left: 2%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    width: 98%;
+    background: whitesmoke;
+}
+
+/*changing the hover style*/
+textarea:hover {
+    background: rgb(255, 255, 255);
+
+}
+/*intro title for projects*/
+caption {
+    font-weight: bolder;
+    font-size: 25px;
+    color: Black;
+    padding-bottom: 2%;
+    padding-top: 1%;
+    text-align: left;
+
+}
+
+caption a {
+    color: black;
+    text-decoration: underline;
+    margin-left: 0;
+
+}
+
+/*styling the title hover effects*/
+caption a:hover {
+    text-decoration: underline;
+}
+
+/*table main styling*/
+table {
+    margin-left: 10%;
+    width: 80%;
+    border-collapse: collapse;
+    text-align: left;
+    table-layout: fixed;
+    border-radius: 1rem;
+    font-weight: normal;
+    margin-top: 1%;
+    margin-right: 10%;
+    padding: 5vh 5vh 5vh 5vh;
+    font-size: 16px;
+
+}
+
+/*adjusting the paddings of the project names*/
+td {
+    border: black;
+    text-align: left;
+}
+
+td a {
+    margin-left: 0;
+    text-align: left;
+
+}
+
+td a:hover {
+    text-decoration: underline;
+}
+
+th{
+    text-align: left;
+}
+
+#typeface img{
+   margin-left: 25%;
+   height: 100vh;
+}
+#infinity img{
+   margin-left: 25%;
+   height: 100vh;
+}
+#mm img{
+   margin-left: 25%;
+   height: 100vh;
+}
+#fodr img{
+   margin-left: 15%;
+   height: 100vh;
+}
+#bat img{
+   margin-left: 25%;
+   height: 100vh;
+}
+#gamma img{
+   margin-left: 15%;
+   height: 100vh;
+}
+#music-poster img{
+   margin-left: 25%;
+   height: 100vh;
+}
+.sliding-logo img{
+    width:10%;
+}
+.social img{
+    width: 2%;
+}
+
+
+
+

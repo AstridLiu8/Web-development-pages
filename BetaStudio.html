@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pleasure Garden</title>
+    <link rel="stylesheet" href="FinalFonts.css">
+</head>
+<body class="body">
+<!--nav bar section-->
+<section class="navbar">
+    <nav>
+        <h1 class="sliding-logo" ><a href="index.html"><img src="images/logo5.png"  alt=""></a></h1>
+        <ul>
+            <li><a href="index.html#design-work">Design Work</a></li>
+            <li><a href="feedback.html">Feedback Here</a></li>
+            <li><a href="ContactMe.html">Contact Me</a></li>
+            <li><a href="assignment.html">Assignment</a></li>
+        </ul>
+    </nav>
+</section>
+<!--description section for introduction of the project located on the left page-->
+<section class="description-background">
+    <div class="project-description">
+        <h3>The Folding Rock</h3>
+        <p >The project was to observe the relationship between the folding black papers and their shadow and establish
+            a field condition that contains a coherent organizational framework according to the lighting rules.
+            <br>
+            <br>
+            ——— —— ——> click points to turn page</p>
+        <div id="container">
+            <h4>PARTY MODE</h4>
+            <label class="switch">
+                <input type="checkbox" onclick="changeMode()">
+                <span class="slider"></span>
+            </label>
+        </div>
+        <script>
+            function changeMode() {
+                var element = document.body;
+                element.classList.toggle("gallery-mode");
+            }
+        </script>
+    </div>
+
+
+<!--    forming image slider, linking photos and creating class for their title and intro area
+-12pictures so repeat it 12 times-->
+    <div class="img-slider">
+        <div class="slide active">
+            <img src="images/image%20gallery/Beta1-big.png" alt="">
+            <div class="info">
+                <h2>Concept Diagram</h2>
+                <p>The idea of bringing the triangular landform that created by the cooperation of lights and shadow to form different moments</p>
+            </div>
+        </div>
+        <div class="slide">
+            <img src="images/image%20gallery/Beta2.5-big.png" alt="">
+            <div class="info">
+                <h2>Planting Scheme</h2>
+                <p>Utilizing different height of plants to creat different landscape scenes and attract animals and insects during various period</p>
+            </div>
+        </div>
+        <div class="slide">
+            <img src="images/image%20gallery/Beta2-big.png" alt="">
+            <div class="info">
+                <h2>Organizational Diagram</h2>
+                <p>The landform and structure were designed after a series of site analysis to ensure the slopes work functionally to create scenes.</p>
+            </div>
+        </div>
+        <div class="slide">
+            <img src="images/image%20gallery/Beta3-big.png" alt="">
+            <div class="info">
+                <h2>Roof Plan</h2>
+                <p>The roof plan shows the materials in various areas, different materials could contribute to different room atmosphere.</p>
+            </div>
+        </div>
+        <div class="slide">
+            <img src="images/image%20gallery/Beta4-big.png" alt="">
+            <div class="info">
+                <h2>Ground Plan</h2>
+                <p>The ground plan shows the arrangement of furniture and the potential activity in different areas, such ceremony and café.</p>
+            </div>
+        </div>
+        <div class="slide">
+            <img src="images/image%20gallery/Beta5-big.png" alt="">
+            <div class="info">
+                <h2>Underground Plan</h2>
+                <p>The underground layer was designed to be a communal area that suit for holding concert and ceremony,the shape can form special experience for visitors.</p>
+            </div>
+        </div>
+        <div class="slide">
+            <img src="images/image%20gallery/Beta6-big.png" alt="">
+            <div class="info">
+                <h2>Isometric And Sections</h2>
+                <p>You can see how the zigzag structure works in the site and how the levels change for different perspectives, which related to the concept closely </p>
+            </div>
+        </div>
+        <div class="slide">
+            <img src="images/image%20gallery/Beta8-big.png" alt="">
+            <div class="info">
+                <h2>Perspective.1</h2>
+                <p>A sloping roof works with the opening and plants can form a geometric inner experience. The climbers should
+                    create nice sunlight patterns on the floor, which is also good for people who like surrounded by plantings. </p>
+            </div>
+        </div>
+        <div class="slide">
+            <img src="images/image%20gallery/Beta9-big.png" alt="">
+            <div class="info">
+                <h2>Perspective.2</h2>
+                <p>You can enjoy your afternoon sunlight here along with well-designed water views, different height of structure can be used as facility</p>
+            </div>
+        </div>
+        <div class="slide">
+            <img src="images/image%20gallery/Beta10-big.png" alt="">
+            <div class="info">
+                <h2>Perspective.3</h2>
+                <p>The northern corridor enable visitors to enjoy their personal visit moment, from this side, visitors can also see the activity room.</p>
+            </div>
+        </div>
+        <div class="slide">
+            <img src="images/image%20gallery/Beta11-big.png" alt="">
+            <div class="info">
+                <h2>Perspective.4</h2>
+                <p>The sunken area's angular roof structure can enrich people's sense experience while the sunlight flows in, the concern contribute to the main atmosphere of the site.</p>
+            </div>
+        </div>
+        <div class="slide">
+            <img src="images/image%20gallery/Beta12-big.png" alt="">
+            <div class="info">
+                <h2>Triptych</h2>
+                <p>The site will be well-designed for visitors to explore their moment in any different conditions, no matter at night or day or even during rainy day</p>
+            </div>
+        </div>
+<!--        in order to create a series of circles (use as button)for activating the change of picture slides
+ each circle match with different picture-->
+        <div class="navigation">
+            <div class="btn active"></div>
+            <div class="btn"></div>
+            <div class="btn"></div>
+            <div class="btn"></div>
+            <div class="btn"></div>
+            <div class="btn"></div>
+            <div class="btn"></div>
+            <div class="btn"></div>
+            <div class="btn"></div>
+            <div class="btn"></div>
+            <div class="btn"></div>
+            <div class="btn"></div>
+        </div>
+    </div>
+</section>
+
+<!--javascript text for the image gallery change effect
+-create variables and match with elements class and set the first slide
+-implement the function of image slider manual navigation utilizing foreach picture
+-each button press would activate the change of slide-->
+<script type="text/javascript">
+    var slides = document.querySelectorAll('.slide');
+    var btns = document.querySelectorAll('.btn');
+    let currentSlide = 1;
+    //coding the function of manualNav
+    var manualNav = function(manual){
+        //go through all the elements(slides&button) one by one
+        slides.forEach((slide) => {
+            slide.classList.remove('active');
+            btns.forEach((btn) => {
+                btn.classList.remove('active');
+            });
+        });
+        //utilizing the classList's add function to add the next element after remove the last slide element
+        slides[manual].classList.add('active');
+        btns[manual].classList.add('active');
+    }
+    //set the action of 'click' as the activate action
+    // utilizing the function manualNav for the image gallery
+    //set the changed slide as the current slide
+    btns.forEach((btn, i) => {
+        btn.addEventListener("click", () => {
+            manualNav(i);
+            currentSlide = i;
+        });
+    });
+
+</script>
+
+</body>
+</html>
